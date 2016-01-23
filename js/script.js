@@ -2,7 +2,7 @@ Parse.initialize("Usv6ZpfyiyVzDK4KST9ED9SPg15PRCa9xUs30vFy", "S5pBnTZfk2G0W27hjc
 
 var Post = Parse.Object.extend("Post");
 var post = new Post();
-  
+
 function createPost() {
 
     post.set("content", $("#content-input").val());
@@ -20,17 +20,33 @@ function createPost() {
 }
 
 var query = new Parse.Query(Post);
-query.get("wZIfAjaqOJ", {
-  success: function(post) {
-var content = post.get("content");
 
-console.log(content);
+query.find({
+  success: function(results) {
+    
+  for (var i = 0; i < results.length; i++) {
+      
+      var outerDiv = document.createElement('div');
+      outerDiv.id = "outer";
+      document.getElementsByClassName('content-display')[0].appendChild(outerDiv);
+        
+      var createPost = document.createElement('h2');
+      var createButton = document.createElement('button');
+      query.equalTo("results", results);
+      createPost.id = "post";
+      createPost.innerHTML = JSON.stringify(results.content);
+      var parseResults = JSON.parse(JSON.stringify(results[i]))
+      createPost.innerHTML = parseResults.content
+      outerDiv.appendChild(createPost);
+      outerDiv.appendChild(createButton);
+      
 
+      
+      
+  }  
   },
+  
   error: function(object, error) {
-    // The object was not retrieved successfully.
-    // error is a Parse.Error with an error code and message.
+    alert("shit hit the fan and your mouth was wide-open.");
   }
 });
-
-
