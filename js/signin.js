@@ -12,18 +12,18 @@ function signInUser() {
     
     Parse.User.logIn($("#username-input").val(), $("#password-input").val(), {
       success: function(user) {
-          var stringData = JSON.stringify(currentUser)
-          var parseData = JSON.parse(stringData)
+          var stringData = JSON.stringify(currentUser);
+          var parseData = JSON.parse(stringData);
         if (parseData.emailVerified == true) {
-            document.write("Login successfull")
-            document.write("<br> <a href='index.html'>Return to home</a>")
+            document.write("Login successfull");
+            document.write("<br> <a href='index.html'>Return to home</a>");
         } else {
             document.write("Login failed.")
-            document.write("<br> <a href='login.html'>try again</a>")
+            document.write("<br> <a href='login.html'>try again</a>");
         }
       },
       error: function(user, error) {
-                    document.write("invalid")
+                    document.write("invalid");
 
       }
       

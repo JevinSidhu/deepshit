@@ -4,7 +4,7 @@ var user = Parse.User.current();
 
 var userName = user.get("username");
 
-document.getElementById("name").innerHTML = userName;
+document.getElementById("name").innerHTML = "welcome, " + "<strong>" + userName + "</strong>";
 
 var userEmail = user.get("email");
 

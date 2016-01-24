@@ -17,6 +17,7 @@ document.getElementById("login").onclick = function() {
   window.location.href = "login.html";
 };;
 
+$("")
 function createPost() {
   
   if (Parse.User.current()) {
@@ -43,6 +44,9 @@ function createPost() {
   } else {
     alert("You are not logged in!")
   }
+    document.getElementById("content-input").value = "";
+
+  
 } 
 
 document.onload = sortQueryDisplay();
@@ -81,11 +85,14 @@ function sortQueryDisplay() {
       var createPost = document.createElement('h2');
       var createButton = document.createElement('button');
       var createAuthor = document.createElement('p');
+      var createImg = document.createElement('img');
       
       createPost.id = "post";
+      createImg.id = "upvoteicon"
+      createImg.src = "img/toiletpaper.svg"
       createButton.className = "votes";
       createButton.dataset.id = JSON.stringify(resultObj.id);
-      createButton.textContent = "Upvote";
+      createButton.textContent = "Paper";
       createAuthor.className = "detail-author"
       
       // createPost.innerHTML = JSON.stringify(results.content);
@@ -95,6 +102,7 @@ function sortQueryDisplay() {
       outerDiv.appendChild(createAuthor);
       outerDiv.appendChild(createPost);
       outerDiv.appendChild(createButton);
+      outerDiv.appendChild(createImg);
   }  
  
  $('.votes').click(function(){
@@ -116,7 +124,9 @@ function sortQueryDisplay() {
         
         post.save();
         sortQueryDisplay();
+        
         break;
+        
     }
   }
 });
