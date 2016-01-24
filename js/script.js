@@ -85,14 +85,14 @@ function sortQueryDisplay() {
       var createPost = document.createElement('h2');
       var createButton = document.createElement('button');
       var createAuthor = document.createElement('p');
-      var createImg = document.createElement('img');
+      // var createImg = document.createElement('img');
       
       createPost.id = "post";
-      createImg.id = "upvoteicon"
-      createImg.src = "img/toiletpaper.svg"
+      // createImg.id = "upvoteicon"
+      // createImg.src = "img/toiletpaper.svg"
       createButton.className = "votes";
       createButton.dataset.id = JSON.stringify(resultObj.id);
-      createButton.textContent = "Paper";
+      createButton.textContent = "Toilet Paper";
       createAuthor.className = "detail-author"
       
       // createPost.innerHTML = JSON.stringify(results.content);
@@ -102,7 +102,7 @@ function sortQueryDisplay() {
       outerDiv.appendChild(createAuthor);
       outerDiv.appendChild(createPost);
       outerDiv.appendChild(createButton);
-      outerDiv.appendChild(createImg);
+      // outerDiv.appendChild(createImg);
   }  
  
  $('.votes').click(function(){
