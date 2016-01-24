@@ -13,36 +13,14 @@
 </head>
 
 <body>
-    
-    <input id="username-input"></input>
-    <input id="password-input"></input>
+    <h2>Login</h2>
+    <div>
+        <input id="username-input" placeholder="username"></input>
+        <input id="password-input" placeholder="password"></input>
+    </div>
     
     <button onclick="signInUser()">submit</button>
-    
-    <button onclick="registerUser()">New User</button>
-<!--       <script>-->
- <!--Initialize Parse-->
-<!--  Parse.initialize("$Usv6ZpfyiyVzDK4KST9ED9SPg15PRCa9xUs30vFy", "$S5pBnTZfk2G0W27hjcQXvnHJxZlVeVTXKoGvcvMl");-->
-<!--    window.fbAsyncInit = function() {-->
-      <!-- Parse.FacebookUtils.init({ // this line replaces FB.init({-->
-      <!--appId      : '1116309275075769', // Facebook App ID-->
-      <!--status     : true,  // check Facebook Login status-->
-      <!--cookie     : true,  // enable cookies to allow Parse to access the session-->
-      <!--xfbml      : true,  // initialize Facebook social plugins on the page-->
-      <!--version    : 'v2.3' // point to the latest Facebook Graph API version-->
-<!--    });-->
-
-        <!--// Run code after the Facebook SDK is loaded.-->
-<!--  };-->
-
-<!--      (function(d, s, id){-->
-<!--    var js, fjs = d.getElementsByTagName(s)[0];-->
-<!--    if (d.getElementById(id)) {return;}-->
-<!--    js = d.createElement(s); js.id = id;-->
-<!--    js.src = "//connect.facebook.net/en_US/sdk.js";-->
-<!--    fjs.parentNode.insertBefore(js, fjs);-->
-<!--  }(document, 'script', 'facebook-jssdk'));-->
-<!--</script>-->
-    <script type="text/javascript" src="js/signin.js"></script>
+    <button onclick="gotoSignup()">Not a user</button>
+        <script type="text/javascript" src="js/signin.js"></script>
 
 </body>

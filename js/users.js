@@ -10,11 +10,12 @@ user.set("email", $("#email-input").val());
 
 user.signUp(null, {
   success: function(user) {
-    // Hooray! Let them use the app now.
+    document.write("<a href='index.html'> Goto Home </a>")
+    document.write("<br> <p>Account creation successfull! Please check your email.</p>")
   },
   error: function(user, error) {
-    // Show the error message somewhere and let the user try again.
-    alert("Error: " + error.code + " " + error.message);
+    $("#confirmation").html("Account creation failed. Please try again.")
+      alert("Error: " + error.code + " " + error.message);
   }
 });
 

@@ -15,9 +15,11 @@ function signInUser() {
           var stringData = JSON.stringify(currentUser)
           var parseData = JSON.parse(stringData)
         if (parseData.emailVerified == true) {
-            document.write("yo")
+            document.write("Login successfull")
+            document.write("<br> <a href='index.html'>Return to home</a>")
         } else {
-            document.write("fuck off")
+            document.write("Login failed.")
+            document.write("<br> <a href='login.html'>try again</a>")
         }
       },
       error: function(user, error) {
@@ -27,6 +29,10 @@ function signInUser() {
       
 });
 
+}
+
+function gotoSignup() {
+    window.location.href = "signup.html"
 }
 
 // function facebookSignin() {
