@@ -10,14 +10,13 @@ if (Parse.User.current()) {
 
 document.getElementById("logout").onclick = function() {
   Parse.User.logOut();
-  window.location.href="index.html"
+  window.location.href="index.html";
 };
 
 document.getElementById("login").onclick = function() {
   window.location.href = "login.html";
-};;
+};
 
-$("")
 function createPost() {
   
   if (Parse.User.current()) {
@@ -92,7 +91,7 @@ function sortQueryDisplay() {
       // createImg.src = "img/toiletpaper.svg"
       createButton.className = "votes";
       createButton.dataset.id = JSON.stringify(resultObj.id);
-      createButton.textContent = "Toilet Paper";
+      createButton.textContent = "Love";
       createAuthor.className = "detail-author"
       
       // createPost.innerHTML = JSON.stringify(results.content);
