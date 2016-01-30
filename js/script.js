@@ -6,8 +6,11 @@ $("#login").click(function(){
       console.log("Login Failed!", error);
     } else {
       console.log("Authenticated successfully with payload:", authData);
+      console.log(authData.twitter.displayName);
     }
   });
 });
+
+
 
 // document.getElementById("content-input").value = "";
