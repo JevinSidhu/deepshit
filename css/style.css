@@ -24,6 +24,7 @@ body {
 
 .mono {
     font-size:15px;
+    color:#000101;
     font-family:"Roboto Mono";
     font-weight:400;
     margin-top:6vh; 
@@ -72,10 +73,10 @@ hr {
     box-shadow: none;
 }
 
-.dope-post{
+.dope-post {
     margin-top:15px;
     font-size:15px;
-    background-color:#000;
+    background-color:#000101;
     color:#FFF;
     border:none;
     padding:10px 25px;
@@ -100,40 +101,51 @@ hr {
     margin-right:auto;
     text-align:center;
     margin-bottom:100px;
+    padding-top:10px;
     padding-bottom: 10px;
 }
 
 #post {
-    padding-left: 10px;
     margin-left: auto;
     margin-right: auto;
     color:#000;
+    width:375px;
     font-family: 'PT Serif', serif;
-    font-size:17px;
+    font-size:16px;
     font-weight: 400;
     margin-bottom:10px;
     text-align: center;
-    
-    
 }
 
 .detail-author {
-        color: #999;
+    display:inline;
+    color: #999;
     font-weight: 400;
     font-size: 14px;
-    padding-top: 5px;
-    margin-left: 430px;
+    margin-left:20px;
+}
+
+.detail-love {
+    display:inline;
+    color: #999;
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 400px;
 }
 
 .votes {
     margin-left: 430px;
-    padding-top: 5px;
-    width: 50px;
-    height: 60px;
-    font-size: 11px;
-    background-color: black;
-    color: white;
-    border: 1px solid black;
+    height: 25px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+}
+
+.votes:hover {
+    /*color: #000;*/
+    background-color: #FF847C;
+    border: 1px solid #FF847C;
 }
 
 #upvoteicon {
@@ -164,9 +176,33 @@ hr {
   }
   
   #outer {
-      width:250px;
+      width:275px;
   }
   
+  #post {
+    width:250px;
+    font-size:13px;
+    margin-top:0px;
+}
+
+.detail-author {
+    margin-left: 200px;
+    padding-top: 15px;
+}
+
+  .votes {
+    margin-left: 200px;
+    text-align:left;
+    font-size:13px;
+    height:30px;
+}
   
   
+}
+
+#notif {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position:fixed;
 }
