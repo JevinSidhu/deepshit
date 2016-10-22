@@ -6,7 +6,6 @@ var approvedRef = new Firebase("https://deepshit.firebaseio.com/approved");
 var pendingRef = new Firebase("https://deepshit.firebaseio.com/pending");
 
 
-
 var accessAuthData;
 var olderPost;
 var newPost;
@@ -21,7 +20,7 @@ if (sessionStorage.selection == "sortByDate") {
 function votingFunction() {
  $(".votes").unbind().on("click",function() {
  if (localStorage.authDataName == undefined) {
-     alert("fuck outta here, sign in.")
+     alert("sign in please.")
      return }
      var idOfPost = this.dataset.id
      var userPath = idOfPost + "/usersvoted" + "/" + localStorage.authDataName
@@ -59,26 +58,26 @@ snapshot.forEach(function(childsnapshot){
           document.getElementsByClassName('content-display')[0].appendChild(outerDiv);
           
           var createPost = document.createElement('h2');
-          var createButton = document.createElement('button');
+          // var createButton = document.createElement('button');
           var createAuthor = document.createElement('p');
           var createLove = document.createElement('p');
       
           createPost.id = "post";
-          createButton.className = "votes";
-          createButton.textContent = "Love";
-          createButton.dataset.id = key;
+          // createButton.className = "votes";
+          // createButton.textContent = "Love";
+          // createButton.dataset.id = key;
           createAuthor.className = "detail-author";
-          createLove.className = "detail-love";
-          createLove.dataset.id = key;
+          // createLove.className = "detail-love";
+          // createLove.dataset.id = key;
           
           createPost.innerHTML = childData.content;
           createAuthor.innerHTML = childData.author;
-          createLove.innerHTML = childData.love;
+          // createLove.innerHTML = childData.love;
           
           outerDiv.appendChild(createAuthor);
           outerDiv.appendChild(createLove);
           outerDiv.appendChild(createPost);
-          outerDiv.appendChild(createButton);
+          // outerDiv.appendChild(createButton);
           votingFunction();
         });}
           
@@ -98,11 +97,12 @@ window.onload = function() {
   "oauth_token_secret": localStorage.accessTokenSecret
   }, function(error, authData) {
    if (error) {
-     alert("Authenticated failed!", error)
+     console.log("Auth. failed", error);
    } 
    else {
-     $("#name").html("Welcome, " + "@" + authData.twitter.username);
-     $("#name").html("Welcome, " + "@" + authData.twitter.username);
+     $("#name").html("@" + authData.twitter.username);
+     $("#name").html("@" + authData.twitter.username);
+     $("#login").html("");
    }
   })
   if ($("#sort-vote").val() == "sortByVotes") {
@@ -136,10 +136,11 @@ $("#login").click(function(){
       console.log("Login Failed!", error);
     } else {
       console.log(authData.twitter.username);
-      localStorage.accessToken = authData.twitter.accessToken
-      localStorage.accessTokenSecret = authData.twitter.accessTokenSecret
-      localStorage.id = authData.twitter.id
-      $("#name").html("Welcome, " + "@" + authData.twitter.username);
+      localStorage.accessToken = authData.twitter.accessToken;
+      localStorage.accessTokenSecret = authData.twitter.accessTokenSecret;
+      localStorage.id = authData.twitter.id;
+      $("#name").html("@" + authData.twitter.username);
+      $("#login").html("");
     } 
   }, {
   });
@@ -148,9 +149,10 @@ $("#login").click(function(){
 
 $("#poster").click(function(){
   if(localStorage.accessToken & localStorage.accessTokenSecret == undefined) { 
-   alert("fuck outta here, sign in.");
+   alert("sign in please");
   }
   else {
+    alert("Your post has been submitted for review. We'll post it soon, if it isn't offensive!");
     var date = new Date;
     var newPostRef = pendingRef.push({
         author: approvedRef.getAuth().twitter.username,
