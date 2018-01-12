@@ -20,7 +20,7 @@ if (sessionStorage.selection == "sortByDate") {
 function votingFunction() {
  $(".votes").unbind().on("click",function() {
  if (localStorage.authDataName == undefined) {
-     alert("fuck outta here, sign in.")
+     alert("Please sign in!")
      return }
      var idOfPost = this.dataset.id
      var buttonType = this.textContent
